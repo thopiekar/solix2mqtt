@@ -67,7 +67,7 @@ async function run(): Promise<void> {
     try {
       await fetchAndPublish();
     } catch (e) {
-      logger.warn("Failed fetching or publishing printer data", e);
+      logger.warn("Failed fetching or publishing Anker Cloud data", e);
     }
     const end = new Date().getTime() - start;
     const sleepInterval = config.pollInterval - end;
