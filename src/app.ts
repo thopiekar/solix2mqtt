@@ -70,7 +70,7 @@ async function run(): Promise<void> {
       logger.warn("Failed fetching or publishing printer data", e);
     }
     const end = new Date().getTime() - start;
-    const sleepInterval = config.pollInterval * 1000 - end;
+    const sleepInterval = config.pollInterval - end;
     logger.log(`Sleeping for ${sleepInterval}ms...`);
     await sleep(sleepInterval);
   }

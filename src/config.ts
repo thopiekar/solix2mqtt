@@ -70,7 +70,7 @@ export function getConfig() {
     password: stringEnvVar("S2M_PASSWORD"),
     country: stringEnvVar("S2M_COUNTRY"),
     loginStore: stringEnvVar("S2M_LOGIN_STORE", "auth.data"),
-    pollInterval: intEnvVar("S2M_POLL_INTERVAL", 30),
+    pollInterval: intEnvVar("S2M_POLL_INTERVAL", 30000),
     mqttUrl: stringEnvVar("S2M_MQTT_URI"),
     mqttClientId: stringEnvVar("S2M_MQTT_CLIENT_ID", "solix2mqtt"),
     mqttUsername: stringEnvVar("S2M_MQTT_USERNAME", null),
