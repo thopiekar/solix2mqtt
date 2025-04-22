@@ -71,8 +71,12 @@ async function run(): Promise<void> {
     }
     const end = new Date().getTime() - start;
     const sleepInterval = config.pollInterval - end;
-    logger.log(`Sleeping for ${sleepInterval}ms...`);
-    await sleep(sleepInterval);
+    if (sleepInterval > 0) {
+      logger.log(`Sleeping for ${sleepInterval}ms...`);
+      await sleep(sleepInterval);
+    } else {
+      logger.log(`Warning: sleepInterval is negative - skipping sleep`);
+    }
   }
 }
 
